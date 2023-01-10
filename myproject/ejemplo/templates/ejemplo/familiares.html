@@ -1,20 +1,19 @@
-!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'ejemplo/base.html' %}
 
-    <h1>Lista de mis familiares</h1>
+{% block titulo%} 
+Lista de mis Familiaries
+{% endblock %}
+{% block contenido %}
+
+    <a href ="/mi-familia/alta">Agregar nuevo familiar</a>
     <ul>
     {% for familiar in lista_familiares %}
         
-            <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}} </li>
+            <li> ID: {{famliar.id}}, Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}
+                 <a href ="/mi-familia/actualizar/{{ familiar.id }}"> Actualizar</a>
+                 <a href ="/mi-familia/borrar/{{ familiar.id }}"> Borrar</a>
+                </li>
         
     {% endfor %}
     <ul>
-</body>
-</html>
+{% endblock %}
