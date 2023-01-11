@@ -19,7 +19,7 @@ from django.views.generic import TemplateView
 from ejemplo.views import (index, saludar_a, sumar, buscar, monstrar_familiares,
                             BuscarFamiliar, AltaFamiliar, ActualizarFamiliar,
                             BorrarFamiliar, FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar )
-
+from ejemplo_dos.views import index
 
 
 urlpatterns = [
@@ -37,6 +37,7 @@ urlpatterns = [
     path('panel-familia/crear', FamiliarCrear.as_view()),
     path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
     path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
-    path('/success_update_massage', TemplateView.as_view(template_name="ejemplo/success_updated_message.html"))
+    path('/success_update_massage', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
+    path('ejemplo-dos/', index),
 ]
 
